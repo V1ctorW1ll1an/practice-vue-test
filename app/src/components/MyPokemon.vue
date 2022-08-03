@@ -1,25 +1,10 @@
 <script setup lang="ts">
-import MyPokemon from './MyPokemon.vue';
-import { ref } from 'vue';
+import { useDefaultStore } from '@/stores/index.js';
+import { storeToRefs } from 'pinia';
 
-type Pokemon = {
-    name: string;
-    type: string;
-    hp: number;
-    attack: number;
-    defense: number;
-    speed: number;
-    moves: string[];
-};
-
-const pokemonList = ref<Pokemon[]>([]);
-
-async function getPokemon() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
-    const data = await response.json();
-    console.log(data);
-    pokemonList.value = data.results;
-}
+const store = useDefaultStore();
+const { pokemonList } = storeToRefs(store);
+const { getPokemon } = store;
 </script>
 <template>
     <div>
