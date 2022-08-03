@@ -3,7 +3,7 @@
 # Setup
 
 ```bash
-    $ cd practice-vue-test
+    $ cd app
     $ npm install
 ```
 
@@ -11,4 +11,11 @@
 
 ```bash
     $ npm run dev
+```
+
+# Tests
+
+```bash
+    $ npm run test:unit
+    $ npm run test:coverage
 ```
