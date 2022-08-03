@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/vue';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import MyPokemon from '@/components/MyPokemon.vue';
 import { setActivePinia, createPinia } from 'pinia';
 

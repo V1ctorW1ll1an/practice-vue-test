@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DynamicComponent from '../components/DynamicComponent.vue';
+import MyPokemon from '@/components/MyPokemon.vue';
 </script>
 <template>
     <div id="Home">
@@ -7,7 +8,6 @@ import DynamicComponent from '../components/DynamicComponent.vue';
             <DynamicComponent element="div">
                 <p>Hello, world!</p>
             </DynamicComponent>
-            <MyPokemon />
         </main>
     </div>
 </template>
