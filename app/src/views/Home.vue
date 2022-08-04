@@ -2,6 +2,7 @@
 import DynamicComponent from '../components/DynamicComponent.vue';
 import MyPokemon from '@/components/MyPokemon.vue';
 import Input from '../components/Input.vue';
+import Counter from '../components/Counter.vue';
 </script>
 <template>
     <div id="Home">
@@ -10,6 +11,7 @@ import Input from '../components/Input.vue';
                 <p>Hello, world!</p>
             </DynamicComponent>
             <Input />
+            <Counter />
         </main>
     </div>
 </template>
