@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import DynamicComponent from '../components/DynamicComponent.vue';
 import MyPokemon from '@/components/MyPokemon.vue';
+import Input from '../components/Input.vue';
 </script>
 <template>
     <div id="Home">
@@ -8,6 +9,7 @@ import MyPokemon from '@/components/MyPokemon.vue';
             <DynamicComponent element="div">
                 <p>Hello, world!</p>
             </DynamicComponent>
+            <Input />
         </main>
     </div>
 </template>

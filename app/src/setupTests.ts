@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, afterEach, afterAll } from 'vitest';
+import { beforeAll, afterEach, afterAll } from 'vitest';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { mockPokemon } from './components/__tests__/mockPokemon';
