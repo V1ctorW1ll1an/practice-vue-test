@@ -59,4 +59,56 @@ describe('CurrencyInput', () => {
         await fireEvent.update(input, '00000,23');
         expect(getCurrency.value).toBe(0.23);
     });
+    it('daily Currency is zero when currency is falsy', async () => {
+        render(CurrencyInput, {
+            global: {
+                plugins: [piniaInstance],
+            },
+        });
+
+        const currency = screen.getByTestId('_currency');
+        const dailyCurrency = screen.getByTestId(
+            '_dailyCurrency'
+        ) as HTMLInputElement;
+
+        await fireEvent.update(currency, '');
+
+        expect(dailyCurrency.value).toBe('0,00');
+
+        await fireEvent.update(currency, '0');
+
+        expect(dailyCurrency.value).toBe('0,00');
+
+        await fireEvent.update(currency, undefined);
+
+        expect(dailyCurrency.value).toBe('0,00');
+
+        await fireEvent.update(currency, 'abc');
+
+        expect(dailyCurrency.value).toBe('0,00');
+    });
+
+    it('The daily currency should be the total currency divided by the days', async () => {
+        render(CurrencyInput, {
+            global: {
+                plugins: [piniaInstance],
+            },
+        });
+
+        const currency = screen.getByTestId('_currency');
+        const days = screen.getByTestId('_days');
+        const dailyCurrency = screen.getByTestId(
+            '_dailyCurrency'
+        ) as HTMLInputElement;
+
+        await fireEvent.update(days, '7');
+        await fireEvent.update(currency, '700,00');
+
+        expect(dailyCurrency.value).toBe('100,00');
+
+        await fireEvent.update(days, '10');
+        await fireEvent.update(currency, '500,00');
+
+        expect(dailyCurrency.value).toBe('50,00');
+    });
 });
