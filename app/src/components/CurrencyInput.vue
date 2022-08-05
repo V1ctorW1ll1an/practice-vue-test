@@ -3,7 +3,7 @@ import { useCurrencyStore } from '@/stores/currencyStore.js';
 import { storeToRefs } from 'pinia';
 
 const currencyStore = useCurrencyStore();
-const { calcDailyCurrency } = currencyStore;
+const { calcDailyCurrency, calcTotalCurrency } = currencyStore;
 const { currency, days, dailyCurrency } = storeToRefs(currencyStore);
 </script>
 
@@ -18,7 +18,12 @@ const { currency, days, dailyCurrency } = storeToRefs(currencyStore);
         v-model="currency"
     />
     <p>moeda diária</p>
-    <input type="text" data-testid="_dailyCurrency" v-model="dailyCurrency" />
+    <input
+        @input="calcTotalCurrency()"
+        type="text"
+        data-testid="_dailyCurrency"
+        v-model="dailyCurrency"
+    />
 </template>
 
 <style lang="scss" scoped></style>

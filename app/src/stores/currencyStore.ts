@@ -17,6 +17,10 @@ export const useCurrencyStore = defineStore('currencyStore', {
         getCurrency: (state) =>
             // convert currency to number
             Number(state.currency.replace('.', '').replace(',', '.')),
+
+        getDailyCurrency: (state) =>
+            // convert daily currency to number
+            Number(state.dailyCurrency.replace('.', '').replace(',', '.')),
     },
     actions: {
         /**
@@ -31,6 +35,22 @@ export const useCurrencyStore = defineStore('currencyStore', {
                 return;
             }
             this.dailyCurrency = `${(this.getCurrency / this.days).toFixed(
+                2
+            )}`.replace('.', ',');
+        },
+
+        /**
+         * Currency is the total currency with two decimals places
+         */
+        calcTotalCurrency() {
+            const regex = /^\d{1,3}(\.\d{3})*(,\d{1,2})?$/;
+            const isCurrency = regex.test(this.currency);
+
+            if (!this.getDailyCurrency || !isCurrency) {
+                this.currency = '0,00';
+                return;
+            }
+            this.currency = `${(this.getDailyCurrency * this.days).toFixed(
                 2
             )}`.replace('.', ',');
         },
