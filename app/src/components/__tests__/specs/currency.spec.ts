@@ -46,4 +46,17 @@ describe('CurrencyInput', () => {
         expect(currency.value).toBe('123,23');
         expect(getCurrency.value).toBe(123.23);
     });
+    it('Should remove left zeros from getCurrency', async () => {
+        const store = useCurrencyStore();
+        const { getCurrency } = storeToRefs(store);
+        render(CurrencyInput, {
+            global: {
+                plugins: [piniaInstance],
+            },
+        });
+        const input = screen.getByTestId('_currency');
+
+        await fireEvent.update(input, '00000,23');
+        expect(getCurrency.value).toBe(0.23);
+    });
 });

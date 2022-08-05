@@ -3,6 +3,7 @@ import DynamicComponent from '../components/DynamicComponent.vue';
 import MyPokemon from '@/components/MyPokemon.vue';
 import Input from '../components/Input.vue';
 import Counter from '../components/Counter.vue';
+import CurrencyInput from '../components/CurrencyInput.vue';
 </script>
 <template>
     <div id="Home">
@@ -12,6 +13,7 @@ import Counter from '../components/Counter.vue';
             </DynamicComponent>
             <Input />
             <Counter />
+            <CurrencyInput />
         </main>
     </div>
 </template>
