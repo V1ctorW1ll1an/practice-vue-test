@@ -3,9 +3,13 @@ import Header from '../components/global/Header.vue';
 </script>
 
 <template>
-    <div id="Home">
-        <Header />
-    </div>
+    <Header />
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#Home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+</style>

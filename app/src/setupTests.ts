@@ -5,7 +5,7 @@ import { mockPokemon } from './components/__tests__/mocks/mockPokemon';
 import 'whatwg-fetch';
 
 export const restHandlers = [
-    rest.get('https://pokeapi.co/api/v2/pokemon', (req, res, ctx) => {
+    rest.get('https://pokeapi.co/api/v2/pokemon', (_, res, ctx) => {
         return res(ctx.status(200), ctx.json(mockPokemon));
     }),
 ];
