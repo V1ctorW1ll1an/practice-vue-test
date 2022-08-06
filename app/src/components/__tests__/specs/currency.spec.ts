@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import CurrencyInput from '@/components/CurrencyInput.vue';
+import CurrencyInput from '@/components/examples/CurrencyInput.vue';
 import { render, screen, fireEvent } from '@testing-library/vue';
 import '@testing-library/jest-dom';
 import { createPinia, setActivePinia, storeToRefs } from 'pinia';

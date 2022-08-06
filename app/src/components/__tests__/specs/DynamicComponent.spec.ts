@@ -1,13 +1,13 @@
-import { render, screen } from "@testing-library/vue";
-import { describe, it, expect } from "vitest";
-import DynamicComponent from "@/components/DynamicComponent.vue";
+import { render, screen } from '@testing-library/vue';
+import { describe, it, expect } from 'vitest';
+import DynamicComponent from '@/components/examples/DynamicComponent.vue';
 
-describe("DynamicComponent", () => {
-    it("Should render element correctly", async () => {
+describe('DynamicComponent', () => {
+    it('Should render element correctly', async () => {
         const [componentId, componentElement, componentSlot] = [
-            "dynamicComponent",
-            "div",
-            "Hello World from element",
+            'dynamicComponent',
+            'div',
+            'Hello World from element',
         ];
         render(DynamicComponent, {
             props: {

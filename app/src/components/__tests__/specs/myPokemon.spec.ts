@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/vue';
 import { describe, it, expect, beforeEach } from 'vitest';
-import MyPokemon from '@/components/MyPokemon.vue';
+import MyPokemon from '@/components/examples/MyPokemon.vue';
 import { setActivePinia, createPinia } from 'pinia';
 
 const piniaInstance = createPinia();

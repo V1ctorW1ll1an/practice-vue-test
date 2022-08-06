@@ -1,6 +1,6 @@
 import { render, fireEvent, screen } from '@testing-library/vue';
 import { describe, it, expect } from 'vitest';
-import Input from '@/components/Input.vue';
+import Input from '@/components/examples/Input.vue';
 import '@testing-library/jest-dom';
 
 describe('Input', () => {

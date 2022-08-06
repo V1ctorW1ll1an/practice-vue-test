@@ -3,8 +3,6 @@
     <RouterView />
 </template>
 
-<style lang="scss" scoped>
-#App {
-    color: $text-color;
-}
+<style lang="scss">
+@import '@/assets/scss/_index.scss';
 </style>

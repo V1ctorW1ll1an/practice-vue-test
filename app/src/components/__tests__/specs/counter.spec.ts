@@ -1,4 +1,4 @@
-import Counter from '@/components/Counter.vue';
+import Counter from '@/components/examples/Counter.vue';
 import { render, screen, fireEvent } from '@testing-library/vue';
 import { describe, it, expect } from 'vitest';
 import '@testing-library/jest-dom';

@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import CurrencyInput from '@/components/CurrencyInput.vue';
+import Header from '../components/global/Header.vue';
 </script>
 
 <template>
     <div id="Home">
-        <main>
-            <CurrencyInput />
-        </main>
+        <Header />
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped lang="scss"></style>
